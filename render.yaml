@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: eazyschooldeploy
+    env: java
+    buildCommand: "./mvnw clean install -DskipTests"
+    startCommand: "java -jar target/eazyschool-aws-deployment.jar"
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://switchyard.proxy.rlwy.net:10149/railway
+      - key: SPRING_DATASOURCE_USERNAME
+        value: root
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: czHigMHwZoFoTmrIdDOQyApCENuBfFIP
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
