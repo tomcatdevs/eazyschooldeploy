@@ -1,7 +1,6 @@
 services:
   - type: web
     name: eazyschooldeploy
-    env: java
     buildCommand: "./mvnw clean install -DskipTests"
     startCommand: "java -jar target/eazyschool-aws-deployment.jar"
     envVars:
